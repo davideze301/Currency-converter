@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f7fb">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <main class="page">
+      <header class="intro">
+        <p class="eyebrow">MONEY, MADE SIMPLE</p>
+        <h1>Currency converter</h1>
+        <p class="subtitle">Convert between currencies with live exchange rates.</p>
+      </header>
+
+      <section class="converter" aria-labelledby="converter-title">
+        <h2 id="converter-title">Make a conversion</h2>
+        <form id="converter-form">
+          <label class="field" for="amount">
+            <span>Amount</span>
+            <input id="amount" name="amount" type="number" min="0" step="any" value="1" required>
+          </label>
+
+          <div class="currency-row">
+            <label class="field" for="from-currency">
+              <span>From</span>
+              <select id="from-currency" name="from" required disabled></select>
+            </label>
+            <button class="swap-button" id="swap-button" type="button" aria-label="Swap currencies" disabled>
+              <span aria-hidden="true">⇄</span>
+            </button>
+            <label class="field" for="to-currency">
+              <span>To</span>
+              <select id="to-currency" name="to" required disabled></select>
+            </label>
+          </div>
+
+          <button class="convert-button" id="convert-button" type="submit" disabled>Convert</button>
+        </form>
+
+        <div class="result" aria-live="polite">
+          <p class="result-label" id="result-label">Your converted amount</p>
+          <p class="result-value" id="result-value">Loading live rates…</p>
+          <p class="rate-note" id="rate-note"></p>
+        </div>
+
+        <p class="status" id="status" role="status"></p>
+      </section>
+
+      <footer>Rates provided by ExchangeRate-API. Rates may change over time.</footer>
+    </main>
+  </body>
+</html>
